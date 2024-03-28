@@ -23,5 +23,5 @@ st.markdown(html_1, unsafe_allow_html=True)
 st.markdown("")
 
 dt=pd.read_csv('./data/bank1.csv')
-st.subheader("ข้อมูลการตลาดธนาคาร")
+st.subheader("🏦ข้อมูลการตลาดธนาคาร🏦")
 st.write(dt.head(100))

@@ -15,7 +15,7 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 st_lottie(lottie_hello, key="hello")
 
 html_1 = """
-<div style="background-color:#85C1E9;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
+<div style="background-color:#EFB9AE;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
 <center><h5>กราฟแสดงข้อมูลการตลาดธนาคาร</h5></center>
 </div>
 """
@@ -24,4 +24,45 @@ st.markdown("")
 
 dt=pd.read_csv('./data/bank1.csv')
 st.subheader("ข้อมูลการตลาดธนาคาร")
-st.write(dt.head(100))
+st.write('ผลรวม')
+
+cl1,cl2,cl3,cl4,cl5,cl6,cl7,cl8,cl9,cl10,cl11,cl12,cl13,cl14,cl15=st.columns(15)
+cl1.write(dt['age'].sum())
+cl2.write(dt['job'].sum())
+cl3.write(dt['marital'].sum())
+cl4.write(dt['education'].sum())
+cl5.write(dt['default'].sum())
+cl6.write(dt['balance'].sum())
+cl7.write(dt['housing'].sum())
+cl8.write(dt['loan'].sum())
+cl9.write(dt['contact'].sum())
+cl10.write(dt['day'].sum())
+cl11.write(dt['month'].sum())
+cl12.write(dt['duration'].sum())
+cl13.write(dt['campaign'].sum())
+cl14.write(dt['pdays'].sum())
+cl15.write(dt['previous'].sum())
+
+
+st.write("กราฟแท่ง")
+
+a=dt['age'].sum()
+b=dt['job'].sum()
+c=dt['marital'].sum()
+d=dt['education'].sum()
+e=dt['default'].sum()
+f=dt['balance'].sum()
+i=dt['housing'].sum()
+j=dt['loan'].sum()
+k=dt['contact'].sum()
+l=dt['day'].sum()
+m=dt['month'].sum()
+n=dt['duration'].sum()
+o=dt['campaign'].sum()
+p=dt['pdays'].sum()
+q=dt['previous'].sum()
+dx=[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q]
+cx=pd.DataFrame(dx,index=["age", "job", "marital", "education", "default", "balance", "housing",
+       "loan", "contact", "day", "month", "duration", "campaign", "pdays",
+       "previous"])
+st.bar_chart(cx)

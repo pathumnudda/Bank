@@ -43,26 +43,3 @@ cl13.write(dt['campaign'].sum())
 cl14.write(dt['pdays'].sum())
 cl15.write(dt['previous'].sum())
 
-
-st.write("กราฟแท่ง")
-
-a=dt['age'].sum()
-b=dt['job'].sum()
-c=dt['marital'].sum()
-d=dt['education'].sum()
-e=dt['default'].sum()
-f=dt['balance'].sum()
-i=dt['housing'].sum()
-j=dt['loan'].sum()
-k=dt['contact'].sum()
-l=dt['day'].sum()
-m=dt['month'].sum()
-n=dt['duration'].sum()
-o=dt['campaign'].sum()
-p=dt['pdays'].sum()
-q=dt['previous'].sum()
-dx=[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q]
-cx=pd.DataFrame(dx,index=["age", "job", "marital", "education", "default", "balance", "housing",
-       "loan", "contact", "day", "month", "duration", "campaign", "pdays",
-       "previous"])
-st.bar_chart(cx)
